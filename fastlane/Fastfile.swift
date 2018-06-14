@@ -10,7 +10,7 @@ import Foundation
 
 class Fastfile: LaneFile {
 	func lintLane() {
-        desc("Description of what the lane does")
+        desc("Lint changes")
         sh(command: "swiftlint lint")
 	}
 }
