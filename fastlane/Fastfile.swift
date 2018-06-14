@@ -11,6 +11,8 @@ import Foundation
 class Fastfile: LaneFile {
 	func lintLane() {
         desc("Lint changes")
-        sh(command: "swiftlint lint")
+        let status = sh(command: "swiftlint lint", log: true, errorCallback: "ERROR!!!")
+        echo(message: "Status: \(status)\n")
+        exit(1)
 	}
 }
